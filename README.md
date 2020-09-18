@@ -14,7 +14,7 @@ This is a list of gotchas I found in [Pandas](https://pandas.pydata.org/) (the P
 
 - [How to determine whether a Pandas Column contains a particular value](https://stackoverflow.com/questions/21319929/how-to-determine-whether-a-pandas-column-contains-a-particular-value)
   - `x in series` tells you if `x` is in the `index` of `series`
-  - use `x in series.values` is in the actual series
+  - use `x in series.values` to check if `x` is in the actual `series`
 
 
 # See also
