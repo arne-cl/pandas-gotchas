@@ -16,6 +16,16 @@ This is a list of gotchas I found in [Pandas](https://pandas.pydata.org/) (the P
   - `x in series` tells you if `x` is in the `index` of `series`
   - use `x in series.values` to check if `x` is in the actual `series`
 
+## filter series / column by substring
+
+To check which elements of a column start with the prefix `field_`,
+run `df.my_column.str.startswith('field_')`. To avoid the error
+`ValueError: Cannot mask with non-boolean array containing NA / NaN values`,
+simply add `na=False` (which will ignore NA values):
+
+```
+df.my_column.str.startswith('field_', na=False)
+```
 
 # See also
 
