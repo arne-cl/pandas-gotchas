@@ -18,9 +18,9 @@ This is a list of gotchas I found in [Pandas](https://pandas.pydata.org/) (the P
 
 ## filter series / column by substring
 
-To check which elements of a column start with the prefix `field_`,
-run `df.my_column.str.startswith('field_')`. To avoid the error
-`ValueError: Cannot mask with non-boolean array containing NA / NaN values`,
+To check which elements of a column start with the prefix `field_`,  
+run `df.my_column.str.startswith('field_')`. To avoid the error  
+`ValueError: Cannot mask with non-boolean array containing NA / NaN values`,  
 simply add `na=False` (which will ignore NA values):
 
 ```
