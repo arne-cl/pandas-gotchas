@@ -27,6 +27,13 @@ simply add `na=False` (which will ignore NA values):
 df.my_column.str.startswith('field_', na=False)
 ```
 
+## joining / merging
+
+- [values in a Pandas index column **do not have to be unique**](https://stackoverflow.com/questions/20199129/pandas-get-duplicated-indexes/52449411) (unlike values in a PRIMARY_KEY column in SQL)
+  - If you do a LEFT JOIN on two tables, you expect the result to have as many rows as the left table.
+  - In Pandas, for a `.join()` or `.merge()` to work the same way, you have to remove duplicate rows,
+    e.g. by calling `df_right.drop_duplicates()` before `pd.merge(df_left, df_right, on='common_column_name', how='left')`.
+
 # See also
 
 [Prabhant Sing. Gotchas of Pandas (Pydata Delhi).](https://github.com/prabhant/Talk-Pandas-Gotchas/blob/master/Pandas%20Gotchas.ipynb)
